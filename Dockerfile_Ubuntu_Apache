@@ -1,0 +1,11 @@
+FROM ubuntu
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get update
+RUN apt-get install apache
+
+CMD ["apachectl", "-D", "FOREGROUND"]
+
+#OR
+#CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]

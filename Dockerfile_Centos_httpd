@@ -1,0 +1,12 @@
+FROM centos
+
+RUN yum update
+RUN yum install httpd
+
+#not needed to run bin/bash
+CMD ["/bin/bash"]
+#starts the httpd service
+CMD ["/usr/sbin/httpd", "-D", "FOREGROUND"]
+
+#
+CMD httpd start
